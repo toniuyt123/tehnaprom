@@ -1,0 +1,23 @@
+<%= flash[:notice] %>
+<table>
+	<thead>
+		<tr>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= user.user %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<div>
+	<h4>Import</h4>
+	<%= form_tag import_users_tag, multipart: true do %>
+		<%= file_field_tag :file %>
+		<%= submit_tag "Import csv" %>
+	<% end %>
+</div>
