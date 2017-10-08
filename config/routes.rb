@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  recources :users do
+  resources :users do
 	collection {post :import}
   end
 
