@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   match '/intervals', :to => 'intervals#calc', :via => [:post]
   match '/lin_regressions', :to => 'lin_regressions#form', :via => [:get]
   match '/lin_regressions', :to => 'lin_regressions#calc', :via => [:post]
-  #get 'sum/sum'
-
-  #get 'sum/sums'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
