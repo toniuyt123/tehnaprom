@@ -8,7 +8,7 @@ class SumController < ApplicationController
 		arr.each do |n|
 			sum += n[Col];
 		end
-		render plain: "%.2f" % sum
+		render plain: "%.2f" % (sum).ceil
 	end
 end
 
