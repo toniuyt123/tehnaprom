@@ -7,7 +7,7 @@ class FiltersController < ApplicationController
 		sum = 0;
 		arr = CSV.parse(params["file"].read, converters: :numeric)
 		arr.each do |n|
-			if n[ColY] % 2 == 0
+			if n[ColY] % 2 != 0
 				sum += n[ColX]	
 			end
 		end
