@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :txtfile
+  resources :txtfiles
   #match '/sums', :to => 'sums#form', :via => [:get]
   match '/sums', :to => 'sums#calc', :via => [:post]
   #match '/filters', :to => 'filters#form', :via => [:get]

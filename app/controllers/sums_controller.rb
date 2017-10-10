@@ -1,4 +1,4 @@
-class SumController < ApplicationController
+class SumsController < ApplicationController
 	def form
 	end
 	Col = 0
