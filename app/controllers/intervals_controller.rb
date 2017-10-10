@@ -1,8 +1,29 @@
+require "csv"
+
 class IntervalsController < ApplicationController
 	Col = 0;
 	def calc
-		arr = CSVread(params["file"])
-		lenght = arr.readlines.size
-		render html: lenght
+		arr = CSV.parse(params["file"].read, converters: :numeric)
+		len = arr.length - 30
+		i = 0
+		maxSum = 0
+		while i <= len do
+			count = 0
+			sum = 0
+			arr.each do |n|
+				if count >= i
+					sum += n[Col]
+				end
+				count += 1
+				if count == 30 + i
+					break
+				end
+			end
+			if maxSum <= sum
+				maxSum = sum
+			end
+			i += 1
+		end 
+		render plain: "%.2f" % maxSum
 	end
 end

@@ -1,9 +1,9 @@
+require "csv"
+
 class SumsController < ApplicationController
-	def form
-	end
 	Col = 0
 	def calc
-		arr = CSVread(params["file"])
+		arr = CSV.parse(params["file"].read, converters: :numeric)
 		sum = 0;
 		arr.each do |n|
 			sum += n[Col];

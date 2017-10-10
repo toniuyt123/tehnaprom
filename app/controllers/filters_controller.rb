@@ -1,9 +1,11 @@
+require "csv"
+
 class FiltersController < ApplicationController
-	ColX = 1;
-	COlY = 2
+	ColX = 1
+	ColY = 2
 	def calc
 		sum = 0;
-		arr = CSVread(params["file"])
+		arr = CSV.parse(params["file"].read, converters: :numeric)
 		arr.each do |n|
 			if n[ColY] % 2 == 0
 				sum += n[ColX]	
