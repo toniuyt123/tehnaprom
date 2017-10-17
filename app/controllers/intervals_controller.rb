@@ -24,6 +24,11 @@ class IntervalsController < ApplicationController
 			end
 			i += 1
 		end 
+		if len < 0
+			arr.each do |n|
+				maxSum += n[Col]
+			end
+		end
 		render plain: "%.2f" % maxSum
 	end
 end
